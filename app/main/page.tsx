@@ -212,7 +212,10 @@ function Topbar({
               value={genre}
               onChange={(v) => onGenre(v as Genre | "all")}
               label="Жанр"
-              options={[["all", "Все жанры"], ...ALL_GENRES.map((g) => [g, g])]}
+              options={[
+                ["all", "Все жанры"] as [string, string],
+                ...ALL_GENRES.map((g): [string, string] => [g, g]),
+              ]}
             />
             <Select
               value={status}
